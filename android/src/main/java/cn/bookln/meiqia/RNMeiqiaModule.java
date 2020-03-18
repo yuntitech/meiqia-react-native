@@ -1,4 +1,4 @@
-package com.meiqia;
+package cn.bookln.meiqia;
 
 import android.content.Intent;
 
@@ -68,7 +68,7 @@ public class RNMeiqiaModule extends ReactContextBaseJavaModule {
         if (data.hasKey("naviColor") && !data.getString("naviColor").equals("")) {
         }
 
-        HashMap<String, Object> mapTemp = data.getMap("clientInfo").toHashMap();
+        HashMap<String, Object> mapTemp = (HashMap<String, Object>) data.getMap("clientInfo");
         HashMap<String, String> clientInfo = new HashMap<String, String>();
         for (HashMap.Entry<String, Object> entry : mapTemp.entrySet()) {
             if (entry.getValue() instanceof String) {

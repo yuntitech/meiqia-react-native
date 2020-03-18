@@ -1,4 +1,4 @@
-package com.meiqia;
+package cn.bookln.meiqia;
 
 import java.util.Arrays;
 import java.util.Collections;

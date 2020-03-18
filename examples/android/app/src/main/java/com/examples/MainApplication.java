@@ -7,7 +7,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.meiqia.RNMeiqiaPackage;
+import cn.bookln.meiqia.RNMeiqiaPackage;
 
 import java.util.Arrays;
 import java.util.List;
