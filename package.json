@@ -1,6 +1,6 @@
 {
   "name": "meiqia-react-native",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "MeiQia sdk component for React Native",
   "main": "index.js",
   "types": "index.d.ts",
