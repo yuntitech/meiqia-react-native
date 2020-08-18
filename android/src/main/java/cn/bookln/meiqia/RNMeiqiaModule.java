@@ -77,6 +77,7 @@ public class RNMeiqiaModule extends ReactContextBaseJavaModule {
         }
 
         MQIntentBuilder intentConfig = new MQIntentBuilder(reactContext);
+
         intentConfig.setClientInfo(clientInfo); // 设置顾客信息 PS: 这个接口只会生效一次,如果需要更新顾客信息,需要调用更新接口
 
         if (data.hasKey("customId") && data.getMap("customId").hasKey("id") && !data.getMap("customId").getString("id").equals("")) {
@@ -107,6 +108,11 @@ public class RNMeiqiaModule extends ReactContextBaseJavaModule {
                 intentConfig.setScheduleRule(MQScheduleRule.REDIRECT_ENTERPRISE);
             }
         }
+
+        if(data.hasKey("enableSendVoiceMessage")){
+            MQConfig.isVoiceSwitchOpen = data.getBoolean("enableSendVoiceMessage");
+        }
+
         MQImage.setImageLoader(new MQPicassoImageLoader());
         Intent intent = intentConfig.build();
         reactContext.startActivity(intent);
