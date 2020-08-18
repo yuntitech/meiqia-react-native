@@ -49,7 +49,9 @@ RCT_EXPORT_METHOD(registerDeviceToken:(NSString *)deviceToken) {
 }
 
 //跳转到聊天界面
-RCT_EXPORT_METHOD(show: (NSDictionary *)param resolve: (RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+RCT_EXPORT_METHOD(show:(NSDictionary *)param
+                  resolve:(RCTPromiseResolveBlock)resolve
+                  rejecter:(RCTPromiseRejectBlock)reject) {
     MQChatViewManager *chatViewManager = [[MQChatViewManager alloc] init];
     MQChatViewStyle *aStyle = [chatViewManager chatViewStyle];
     // 设置返回键
@@ -70,6 +72,7 @@ RCT_EXPORT_METHOD(show: (NSDictionary *)param resolve: (RCTPromiseResolveBlock)r
     [aStyle setNavBackButtonImage:[UIImage imageNamed:@"meiqia-icon"]];
     // 设置圆形头像
     [aStyle setEnableRoundAvatar:YES];
+    
     // [aStyle setEnableOutgoingAvatar:NO]; //不显示用户头像
     // [aStyle setEnableIncomingAvatar:NO]; //不显示客服头像
 
@@ -121,6 +124,16 @@ RCT_EXPORT_METHOD(show: (NSDictionary *)param resolve: (RCTPromiseResolveBlock)r
 
     [MQManager setScheduledAgentWithAgentId:agentId agentGroupId:agentGroupId scheduleRule:rule];
     //客服组scheduledInfo
+    
+    NSDictionary *config = [param valueForKey:@"config"];
+    NSNumber *enableSendVoiceMessage = [config valueForKey:@"enableSendVoiceMessage"];
+    NSNumber *enableSendEmoji = [config valueForKey:@("enableSendEmoji")];
+    NSNumber *enableSendImageMessage = [config valueForKey:@("enableSendImageMessage")];
+    
+    [chatViewManager enableSendVoiceMessage:enableSendVoiceMessage ? enableSendVoiceMessage.boolValue : YES];
+    [chatViewManager enableSendEmoji:enableSendEmoji ? enableSendEmoji.boolValue : YES];
+    [chatViewManager enableSendImageMessage:enableSendImageMessage ? enableSendImageMessage.boolValue : YES];
+    
     [chatViewManager pushMQChatViewControllerInViewController:[UIApplication sharedApplication].delegate.window.rootViewController];
 }
 
