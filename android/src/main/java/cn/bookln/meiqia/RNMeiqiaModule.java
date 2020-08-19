@@ -109,8 +109,11 @@ public class RNMeiqiaModule extends ReactContextBaseJavaModule {
             }
         }
 
-        if(data.hasKey("enableSendVoiceMessage")){
-            MQConfig.isVoiceSwitchOpen = data.getBoolean("enableSendVoiceMessage");
+        ReadableMap config = data.getMap("config");
+        if (config != null) {
+            if (config.hasKey("enableSendVoiceMessage")) {
+                MQConfig.isVoiceSwitchOpen = config.getBoolean("enableSendVoiceMessage");
+            }
         }
 
         MQImage.setImageLoader(new MQPicassoImageLoader());
