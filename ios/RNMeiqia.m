@@ -73,7 +73,7 @@ RCT_EXPORT_METHOD(show:(NSDictionary *)param
     // 设置圆形头像
     [aStyle setEnableRoundAvatar:YES];
     
-    // [aStyle setEnableOutgoingAvatar:NO]; //不显示用户头像
+    [aStyle setEnableOutgoingAvatar:NO]; //不显示用户头像
     // [aStyle setEnableIncomingAvatar:NO]; //不显示客服头像
 
     // 设置客户端信息
