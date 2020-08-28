@@ -17,7 +17,7 @@
                 android:configChanges="keyboardHidden|orientation"
                 android:launchMode="singleTop"
                 android:screenOrientation="portrait"
-                android:theme="@style/MQTheme"
+                android:theme="@style/ConversationTheme"
                 android:windowSoftInputMode="stateHidden|adjustResize"/>
 
         <!--图片查看界面-->
