@@ -1,6 +1,6 @@
 {
   "name": "meiqia-react-native",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "MeiQia sdk component for React Native",
   "main": "index.js",
   "types": "index.d.ts",
@@ -26,7 +26,7 @@
   "author": "Kenny Tian <kenny_tian@outlook.com>",
   "license": "Anti996",
   "peerDependencies": {
-    "react": "16.9.0",
-    "react-native": "0.61.5"
+    "react": "*",
+    "react-native": "*"
   }
 }
